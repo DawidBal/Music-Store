@@ -1,0 +1,112 @@
+@import 'variables', 'mixins';
+
+html {
+  font-family: 'Chewy', cursive;
+  font-size: 62.5%;
+}
+
+body {
+  color: var(--white);
+  background: var(--bg-grey);
+}
+
+.l-flex {
+  display: flex;
+}
+
+.l-grid {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.l-flex-1 {
+  flex: 1;
+}
+
+.l-ai-center {
+  align-items: center;
+}
+
+.l-jc-sa {
+  justify-content: space-around;
+}
+
+/* Header */
+
+.c-header {
+  font-size: 2rem;
+  margin: 1rem 2rem;
+}
+
+.c-title {
+  color: var(--primary);
+  font-size: 5rem;
+}
+
+.c-menu {
+  gap: 2rem;
+  &__item {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 27.75rem) {
+  .c-menu__item {
+    font-size: 2rem;
+  }
+  .c-title {
+    font-size: 3.5rem;
+  }
+}
+
+/* Main */
+.c-main {
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(to bottom, transparent, var(--bg-grey) 95%),
+    url(/images/bgimg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+.c-phrase {
+  display: block;
+  margin-top: clamp(7rem, 3rem + 5vw, 11rem);
+  font-size: clamp(3.5rem, 1rem + 5vw, 6rem);
+  position: relative;
+
+  &--big {
+    letter-spacing: clamp(1rem, 0.5rem + 1vw, 1.5rem);
+    position: absolute;
+    display: block;
+    top: clamp(-11rem, -5rem - 5vw, -7rem);
+    font-size: clamp(7rem, 5rem + 5vw, 11rem);
+  }
+  &--red {
+    font-style: italic;
+    color: var(--primary);
+    text-shadow: 4px 4px var(--red-shadow);
+  }
+}
+
+.c-highlights {
+  margin-top: 2rem;
+
+  &__title {
+    font-size: clamp(3rem, 1rem + 2vw, 4rem);
+    text-shadow: 2px 2px var(--red-shadow);
+  }
+}
+
+.c-footer {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  &__link {
+    text-decoration: none;
+    color: var(--links);
+  }
+}

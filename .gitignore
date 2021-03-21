@@ -4,3 +4,5 @@ node_modules/
 webpack.config.js
 
 workspace.code-workspace
+
+dart-sass/
