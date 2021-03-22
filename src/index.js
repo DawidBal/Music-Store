@@ -35,3 +35,11 @@ const toggleActivePage = (menuItem) => {
         }
     })
 }
+const content = document.querySelector('.js-main');
+const homeBtn = document.querySelector('.js-home');
+const storeBtn = document.querySelector('.js-store');
+const aboutBtn = document.querySelector('.js-about');
+
+homeBtn.addEventListener('click', printHomePage);
+storeBtn.addEventListener('click', printStorePage);
+aboutBtn.addEventListener('click', printAboutPage);
