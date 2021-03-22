@@ -1,11 +1,12 @@
 :root {
   --white: #fff;
   --bg-grey: #1a1b20;
-  --secondary: #e98a15;
+  --secondary: #2de4c2;
   --primary: #e71d36;
   --red-shadow: #570505;
 }
 
+/* Global styles */
 html {
   font-family: "Chewy", cursive;
   font-size: 62.5%;
@@ -16,6 +17,12 @@ body {
   background: var(--bg-grey);
 }
 
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+/* Layout class styles */
 .l-flex {
   display: flex;
 }
@@ -37,7 +44,7 @@ body {
   justify-content: space-around;
 }
 
-/* Header */
+/* Header section */
 .c-header {
   font-size: 2rem;
   margin: 1rem 2rem;
@@ -53,6 +60,17 @@ body {
 }
 .c-menu__item {
   font-size: 3rem;
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+}
+.c-menu__item:focus {
+  outline: none;
+}
+.c-menu__item--active {
+  transition: color 200ms ease-in-out;
+  color: var(--secondary);
 }
 
 @media screen and (max-width: 27.75rem) {
@@ -64,7 +82,7 @@ body {
     font-size: 3.5rem;
   }
 }
-/* Main */
+/* Main section */
 .c-main {
   flex-direction: column;
   align-items: center;
@@ -72,6 +90,12 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
+}
+
+.c-wrapper {
+  margin-top: 2rem;
+  line-height: 1;
+  text-align: center;
 }
 
 .c-phrase {
@@ -93,14 +117,7 @@ body {
   text-shadow: 4px 4px var(--red-shadow);
 }
 
-.c-highlights {
-  margin-top: 2rem;
-}
-.c-highlights__title {
-  font-size: clamp(3rem, 1rem + 2vw, 4rem);
-  text-shadow: 2px 2px var(--red-shadow);
-}
-
+/* Footer */
 .c-footer {
   font-size: 1.8rem;
   text-align: center;
@@ -109,7 +126,7 @@ body {
 }
 .c-footer__link {
   text-decoration: none;
-  color: var(--links);
+  color: var(--secondary);
 }
 
 /*# sourceMappingURL=style.css.map */
