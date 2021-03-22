@@ -1,5 +1,7 @@
 @import 'variables', 'mixins';
 
+/* Global styles */
+
 html {
   font-family: 'Chewy', cursive;
   font-size: 62.5%;
@@ -9,6 +11,13 @@ body {
   color: var(--white);
   background: var(--bg-grey);
 }
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+/* Layout class styles */
 
 .l-flex {
   display: flex;
@@ -31,7 +40,7 @@ body {
   justify-content: space-around;
 }
 
-/* Header */
+/* Header section */
 
 .c-header {
   font-size: 2rem;
@@ -47,6 +56,19 @@ body {
   gap: 2rem;
   &__item {
     font-size: 3rem;
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &--active {
+      transition: color 200ms ease-in-out;
+      color: var(--secondary);
+    }
   }
 }
 
@@ -59,7 +81,8 @@ body {
   }
 }
 
-/* Main */
+/* Main section */
+
 .c-main {
   flex-direction: column;
   align-items: center;
@@ -70,18 +93,19 @@ body {
   background-position: center top;
 }
 
+.c-wrapper {
+  margin-top: 2rem;
+  line-height: 1;
+  text-align: center;
+}
+
 .c-phrase {
   display: block;
-  margin-top: clamp(7rem, 3rem + 5vw, 11rem);
   font-size: clamp(3.5rem, 1rem + 5vw, 6rem);
-  position: relative;
 
   &--big {
-    letter-spacing: clamp(1rem, 0.5rem + 1vw, 1.5rem);
-    position: absolute;
-    display: block;
-    top: clamp(-11rem, -5rem - 5vw, -7rem);
     font-size: clamp(7rem, 5rem + 5vw, 11rem);
+    display: block;
   }
   &--red {
     font-style: italic;
@@ -90,14 +114,7 @@ body {
   }
 }
 
-.c-highlights {
-  margin-top: 2rem;
-
-  &__title {
-    font-size: clamp(3rem, 1rem + 2vw, 4rem);
-    text-shadow: 2px 2px var(--red-shadow);
-  }
-}
+/* Footer */
 
 .c-footer {
   font-size: 1.8rem;
@@ -107,6 +124,6 @@ body {
 
   &__link {
     text-decoration: none;
-    color: var(--links);
+    color: var(--secondary);
   }
 }
