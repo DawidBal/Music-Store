@@ -100,16 +100,11 @@ a {
 
 .c-phrase {
   display: block;
-  margin-top: clamp(7rem, 3rem + 5vw, 11rem);
   font-size: clamp(3.5rem, 1rem + 5vw, 6rem);
-  position: relative;
 }
 .c-phrase--big {
-  letter-spacing: clamp(1rem, 0.5rem + 1vw, 1.5rem);
-  position: absolute;
-  display: block;
-  top: clamp(-11rem, -5rem - 5vw, -7rem);
   font-size: clamp(7rem, 5rem + 5vw, 11rem);
+  display: block;
 }
 .c-phrase--red {
   font-style: italic;
