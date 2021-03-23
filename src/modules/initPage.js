@@ -7,7 +7,7 @@ export default function initialPagePrint() {
                 <ul class="c-menu l-flex">
                     <button class="c-menu__item c-menu__item--active js-home">Home</button>
                     <button class="c-menu__item js-store">Store</button>
-                    <button class="c-menu__item js-about">About</button>
+                    <button class="c-menu__item js-contact">Contact</button>
                 </ul>
             </nav>
         </header>

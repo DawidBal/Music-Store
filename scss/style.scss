@@ -1,4 +1,4 @@
-@import 'variables', 'mixins';
+@import 'variables', 'mixins', 'layouts';
 
 /* Global styles */
 
@@ -17,27 +17,8 @@ a {
   color: var(--white);
 }
 
-/* Layout class styles */
-
-.l-flex {
-  display: flex;
-}
-
-.l-grid {
-  display: grid;
+.c-content {
   grid-template-rows: auto 1fr auto;
-}
-
-.l-flex-1 {
-  flex: 1;
-}
-
-.l-ai-center {
-  align-items: center;
-}
-
-.l-jc-sa {
-  justify-content: space-around;
 }
 
 /* Header section */
@@ -86,6 +67,7 @@ a {
 .c-main {
   flex-direction: column;
   align-items: center;
+  gap: 2rem;
   background-image: linear-gradient(to bottom, transparent, var(--bg-grey) 95%),
     url(/images/bgimg.jpg);
   background-repeat: no-repeat;
@@ -100,17 +82,47 @@ a {
 }
 
 .c-phrase {
-  display: block;
   font-size: clamp(3.5rem, 1rem + 5vw, 6rem);
 
   &--big {
     font-size: clamp(7rem, 5rem + 5vw, 11rem);
-    display: block;
   }
   &--red {
     font-style: italic;
     color: var(--primary);
-    text-shadow: 4px 4px var(--red-shadow);
+    text-shadow: 4px 4px var(--primary-shadow);
+  }
+}
+
+/* Home Page*/
+.c-highlight {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 0 2rem;
+  &__item {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1rem;
+    border: 2px solid var(--secondary);
+    border-radius: $item-border-radius;
+    box-shadow: 0.5rem 0.5rem var(--secondary), 0.5rem 0 var(--secondary),
+      0 0.5rem var(--secondary);
+  }
+  &__img {
+    border-bottom: 1px solid var(--secondary);
+    border-top-left-radius: $item-border-radius;
+    border-top-right-radius: $item-border-radius;
+  }
+  &__text {
+    text-align: center;
+    margin: 1rem;
+  }
+  &__title {
+    font-size: clamp(3.5rem, 1rem + 5vw, 5rem);
+    line-height: 1.25;
+  }
+  &__desc {
+    font-size: clamp(1.5rem, 0.5rem + 1.5vw, 2rem);
   }
 }
 
@@ -119,7 +131,7 @@ a {
 .c-footer {
   font-size: 1.8rem;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
 
   &__link {

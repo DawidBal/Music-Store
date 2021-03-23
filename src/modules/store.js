@@ -1,6 +1,6 @@
 export default function storePage() {
     const pageContent = `
-                    <span class="c-phrase--big c-phrase--red">Store</span>
+        <h2 class="c-phrase--big c-phrase--red">Store</h2>
     `;
     const content = document.querySelector('.js-main');
     content.innerHTML = pageContent;

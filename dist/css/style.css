@@ -2,8 +2,30 @@
   --white: #fff;
   --bg-grey: #1a1b20;
   --secondary: #2de4c2;
+  --secondary-shadow: #149981;
   --primary: #e71d36;
-  --red-shadow: #570505;
+  --primary-shadow: #570505;
+}
+
+/* Layout class styles */
+.l-flex {
+  display: flex;
+}
+
+.l-grid {
+  display: grid;
+}
+
+.l-flex-1 {
+  flex: 1;
+}
+
+.l-ai-center {
+  align-items: center;
+}
+
+.l-jc-sa {
+  justify-content: space-around;
 }
 
 /* Global styles */
@@ -22,26 +44,8 @@ a {
   color: var(--white);
 }
 
-/* Layout class styles */
-.l-flex {
-  display: flex;
-}
-
-.l-grid {
-  display: grid;
+.c-content {
   grid-template-rows: auto 1fr auto;
-}
-
-.l-flex-1 {
-  flex: 1;
-}
-
-.l-ai-center {
-  align-items: center;
-}
-
-.l-jc-sa {
-  justify-content: space-around;
 }
 
 /* Header section */
@@ -86,6 +90,7 @@ a {
 .c-main {
   flex-direction: column;
   align-items: center;
+  gap: 2rem;
   background-image: linear-gradient(to bottom, transparent, var(--bg-grey) 95%), url(/images/bgimg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -99,24 +104,53 @@ a {
 }
 
 .c-phrase {
-  display: block;
   font-size: clamp(3.5rem, 1rem + 5vw, 6rem);
 }
 .c-phrase--big {
   font-size: clamp(7rem, 5rem + 5vw, 11rem);
-  display: block;
 }
 .c-phrase--red {
   font-style: italic;
   color: var(--primary);
-  text-shadow: 4px 4px var(--red-shadow);
+  text-shadow: 4px 4px var(--primary-shadow);
+}
+
+/* Home Page*/
+.c-highlight {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 0 2rem;
+}
+.c-highlight__item {
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1rem;
+  border: 2px solid var(--secondary);
+  border-radius: 10px;
+  box-shadow: 0.5rem 0.5rem var(--secondary), 0.5rem 0 var(--secondary), 0 0.5rem var(--secondary);
+}
+.c-highlight__img {
+  border-bottom: 1px solid var(--secondary);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.c-highlight__text {
+  text-align: center;
+  margin: 1rem;
+}
+.c-highlight__title {
+  font-size: clamp(3.5rem, 1rem + 5vw, 5rem);
+  line-height: 1.25;
+}
+.c-highlight__desc {
+  font-size: clamp(1.5rem, 0.5rem + 1.5vw, 2rem);
 }
 
 /* Footer */
 .c-footer {
   font-size: 1.8rem;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
 .c-footer__link {
