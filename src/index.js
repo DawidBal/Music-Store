@@ -1,45 +1,50 @@
 import renderInitialPage from './modules/initPage.js';
 import renderHomePage from './modules/home.js';
-import rederAboutPage from './modules/about.js';
-import rederStorePage from './modules/store.js';
+import renderContactPage from './modules/contact.js';
+import renderStorePage from './modules/store.js';
 
+const pageManager = (() => {
 
-renderInitialPage();
-renderHomePage();
-
-function printHomePage() {
-    content.innerHTML = ``;
-    toggleActivePage(this);
+    renderInitialPage();
     renderHomePage();
-};
 
-function printStorePage() {
-    content.innerHTML = ``;
-    toggleActivePage(this);
-    rederStorePage();
-};
+    function printHomePage() {
+        content.innerHTML = ``;
+        toggleActivePage(this);
+        renderHomePage();
+    };
 
-function printAboutPage() {
-    content.innerHTML = ``;
-    toggleActivePage(this);
-    rederAboutPage();
-};
+    function printStorePage() {
+        content.innerHTML = ``;
+        toggleActivePage(this);
+        renderStorePage();
+    };
 
-const toggleActivePage = (menuItem) => {
-    const navButtons = document.querySelectorAll('button');
-    navButtons.forEach(button => {
-        if(menuItem !== button) {
-            button.classList.remove('c-menu__item--active');
-        } else {
-            button.classList.add('c-menu__item--active');
-        }
-    })
-}
-const content = document.querySelector('.js-main');
-const homeBtn = document.querySelector('.js-home');
-const storeBtn = document.querySelector('.js-store');
-const aboutBtn = document.querySelector('.js-about');
+    function printContactPage() {
+        content.innerHTML = ``;
+        toggleActivePage(this);
+        renderContactPage();
+    };
 
-homeBtn.addEventListener('click', printHomePage);
-storeBtn.addEventListener('click', printStorePage);
-aboutBtn.addEventListener('click', printAboutPage);
+    const toggleActivePage = (menuItem) => {
+        const navButtons = document.querySelectorAll('button');
+        navButtons.forEach(button => {
+            if(menuItem !== button) {
+                button.classList.remove('c-menu__item--active');
+            } else {
+                button.classList.add('c-menu__item--active');
+            }
+        })
+    }
+
+    const content = document.querySelector('.js-main');
+    const homeBtn = document.querySelector('.js-home');
+    const storeBtn = document.querySelector('.js-store');
+    const contactBtn = document.querySelector('.js-contact');
+
+    homeBtn.addEventListener('click', printHomePage);
+    storeBtn.addEventListener('click', printStorePage);
+    contactBtn.addEventListener('click', printContactPage);
+})();
+
+pageManager();
