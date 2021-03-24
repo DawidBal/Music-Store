@@ -1,4 +1,4 @@
-@import 'variables', 'mixins', 'layouts';
+@import 'initial', 'home', 'contact', 'store', 'variables', 'mixins', 'layouts';
 
 /* Global styles */
 
@@ -17,125 +17,15 @@ a {
   color: var(--white);
 }
 
-.c-content {
-  grid-template-rows: auto 1fr auto;
+.fadeInAnim {
+  animation: fadeIn 200ms ease-in-out;
 }
 
-/* Header section */
-
-.c-header {
-  font-size: 2rem;
-  margin: 1rem 2rem;
-}
-
-.c-title {
-  color: var(--primary);
-  font-size: 5rem;
-}
-
-.c-menu {
-  gap: 2rem;
-  &__item {
-    font-size: 3rem;
-    background: none;
-    border: none;
-    color: var(--white);
-    cursor: pointer;
-
-    &:focus {
-      outline: none;
-    }
-
-    &--active {
-      transition: color 200ms ease-in-out;
-      color: var(--secondary);
-    }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-}
-
-@media screen and (max-width: 27.75rem) {
-  .c-menu__item {
-    font-size: 2rem;
-  }
-  .c-title {
-    font-size: 3.5rem;
-  }
-}
-
-/* Main section */
-
-.c-main {
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  background-image: linear-gradient(to bottom, transparent, var(--bg-grey) 95%),
-    url(/images/bgimg.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center top;
-}
-
-.c-wrapper {
-  margin-top: 2rem;
-  line-height: 1;
-  text-align: center;
-}
-
-.c-phrase {
-  font-size: clamp(3.5rem, 1rem + 5vw, 6rem);
-
-  &--big {
-    font-size: clamp(7rem, 5rem + 5vw, 11rem);
-  }
-  &--red {
-    font-style: italic;
-    color: var(--primary);
-    text-shadow: 4px 4px var(--primary-shadow);
-  }
-}
-
-/* Home Page*/
-.c-highlight {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin: 0 2rem;
-  &__item {
-    flex-direction: column;
-    align-items: center;
-    margin-right: 1rem;
-    border: 2px solid var(--secondary);
-    border-radius: $item-border-radius;
-    box-shadow: 0.5rem 0.5rem var(--secondary), 0.5rem 0 var(--secondary),
-      0 0.5rem var(--secondary);
-  }
-  &__img {
-    border-bottom: 1px solid var(--secondary);
-    border-top-left-radius: $item-border-radius;
-    border-top-right-radius: $item-border-radius;
-  }
-  &__text {
-    text-align: center;
-    margin: 1rem;
-  }
-  &__title {
-    font-size: clamp(3.5rem, 1rem + 5vw, 5rem);
-    line-height: 1.25;
-  }
-  &__desc {
-    font-size: clamp(1.5rem, 0.5rem + 1.5vw, 2rem);
-  }
-}
-
-/* Footer */
-
-.c-footer {
-  font-size: 1.8rem;
-  text-align: center;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-
-  &__link {
-    text-decoration: none;
-    color: var(--secondary);
+  100% {
+    opacity: 1;
   }
 }

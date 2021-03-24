@@ -1,0 +1,41 @@
+@use 'variables';
+
+/* Home Page*/
+
+.c-highlight {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 0 2rem;
+
+  &__item {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1rem;
+    border: 2px solid var(--secondary);
+    border-top-left-radius: variables.$item-border-radius;
+    border-top-right-radius: variables.$item-border-radius;
+    box-shadow: 0 0.5rem var(--secondary);
+  }
+
+  &__img {
+    border-bottom: 1px solid var(--secondary);
+    border-top-left-radius: variables.$item-border-radius;
+    border-top-right-radius: variables.$item-border-radius;
+  }
+
+  &__text {
+    height: 100%;
+    padding: 1rem;
+    text-align: center;
+    background: var(--bg-semiblack);
+  }
+
+  &__title {
+    font-size: clamp(3.5rem, 1rem + 5vw, 5rem);
+    line-height: 1.25;
+  }
+
+  &__desc {
+    font-size: clamp(1.5rem, 0.5rem + 1.5vw, 2rem);
+  }
+}

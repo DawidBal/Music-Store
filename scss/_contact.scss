@@ -1,0 +1,38 @@
+.c-contact {
+  gap: 1rem;
+  width: 80%;
+  flex-direction: row-reverse;
+
+  &__info {
+    font-size: 2rem;
+    padding: 2rem;
+    background: var(--bg-semiblack);
+    border: 1px solid var(--secondary);
+  }
+  &__location,
+  &__phone,
+  &__mail {
+    gap: 1rem;
+  }
+  &__map {
+    flex: 1;
+    & iframe {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 60.25rem) {
+  .c-contact {
+    width: 80%;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 27.75rem) {
+  .c-contact {
+    width: 70%;
+  }
+}
+.c-icon {
+  color: var(--primary);
+}

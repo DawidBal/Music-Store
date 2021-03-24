@@ -1,0 +1,95 @@
+.c-content {
+  grid-template-rows: auto 1fr auto;
+}
+
+/* Header section */
+
+.c-header {
+  font-size: 2rem;
+  margin: 1rem 2rem;
+}
+
+.c-title {
+  color: var(--primary);
+  font-size: 5rem;
+}
+
+.c-menu {
+  gap: 2rem;
+
+  &__item {
+    font-size: 3rem;
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &--active {
+      transition: color 200ms ease-in-out;
+      color: var(--secondary);
+    }
+  }
+}
+
+@media screen and (max-width: 27.75rem) {
+  .c-menu__item {
+    font-size: 2rem;
+  }
+  .c-title {
+    font-size: 3.5rem;
+  }
+}
+
+/* Main section */
+
+.c-main {
+  background-image: linear-gradient(to bottom, transparent, var(--bg-grey) 95%),
+    url(/images/bgimg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+.c-wrapper {
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.c-page-title {
+  margin-top: 2rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.c-phrase {
+  font-size: clamp(3.5rem, 1rem + 5vw, 6rem);
+
+  &--big {
+    font-size: clamp(7rem, 5rem + 5vw, 11rem);
+  }
+
+  &--red {
+    font-style: italic;
+    color: var(--primary);
+    text-shadow: 4px 4px var(--primary-shadow);
+  }
+}
+
+/* Footer */
+
+.c-footer {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+
+  &__link {
+    text-decoration: none;
+    color: var(--primary);
+  }
+}
