@@ -1,7 +1,8 @@
 export default function homePage() {
   const pageContent = 
     `
-      <div class="c-wrapper c-home">
+    <div class="c-wrapper fadeInAnim l-flex">
+      <div class="c-page-title">
           <p class="c-phrase--big c-phrase--red">Welcome</p>
           <p class="c-phrase">to <span class="c-phrase--red">Soundin</span> the smallest</p>
           <p class="c-phrase">music store on the web</p>
@@ -10,7 +11,7 @@ export default function homePage() {
         <div class="c-highlight__item l-flex">
           <img src="/images/vinyl.jpg" alt="" class="c-highlight__img">
           <div class="c-highlight__text">
-              <p class="c-highlight__title">Vinyls</p>
+              <p class="c-highlight__title">Vinyl & CDs</p>
               <p class="c-highlight__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente iusto doloremque, ipsa unde eaque exercitationem.</p>
           </div>
       </div>
@@ -28,6 +29,7 @@ export default function homePage() {
               <p class="c-highlight__title">Instruments</p>
               <p class="c-highlight__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas cum voluptatum tempore ullam exercitationem omnis delectus dignissimos soluta doloribus animi!</p>
           </div>
+      </div>
       </div>
       </div>
     `;

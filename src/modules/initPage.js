@@ -11,7 +11,7 @@ export default function initialPagePrint() {
                 </ul>
             </nav>
         </header>
-        <main class="c-main l-flex js-main"></main>
+        <main class="c-main js-main"></main>
         <footer class="c-footer">
             <p class="c-footer__copyright">Made with ❤️ by <a href="https://github.com/DawidBal" target="_blank" class="c-footer__link">Dave</a></p>
         </footer>

@@ -1,49 +1,3 @@
-:root {
-  --white: #fff;
-  --bg-grey: #1a1b20;
-  --secondary: #2de4c2;
-  --secondary-shadow: #149981;
-  --primary: #e71d36;
-  --primary-shadow: #570505;
-}
-
-/* Layout class styles */
-.l-flex {
-  display: flex;
-}
-
-.l-grid {
-  display: grid;
-}
-
-.l-flex-1 {
-  flex: 1;
-}
-
-.l-ai-center {
-  align-items: center;
-}
-
-.l-jc-sa {
-  justify-content: space-around;
-}
-
-/* Global styles */
-html {
-  font-family: "Chewy", cursive;
-  font-size: 62.5%;
-}
-
-body {
-  color: var(--white);
-  background: var(--bg-grey);
-}
-
-a {
-  text-decoration: none;
-  color: var(--white);
-}
-
 .c-content {
   grid-template-rows: auto 1fr auto;
 }
@@ -88,9 +42,6 @@ a {
 }
 /* Main section */
 .c-main {
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
   background-image: linear-gradient(to bottom, transparent, var(--bg-grey) 95%), url(/images/bgimg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -98,6 +49,12 @@ a {
 }
 
 .c-wrapper {
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.c-page-title {
   margin-top: 2rem;
   line-height: 1;
   text-align: center;
@@ -115,6 +72,27 @@ a {
   text-shadow: 4px 4px var(--primary-shadow);
 }
 
+/* Footer */
+.c-footer {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+.c-footer__link {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+:root {
+  --white: #fff;
+  --bg-grey: #1a1b20;
+  --secondary: #ffc743;
+  --primary: #e71d36;
+  --primary-shadow: #570505;
+  --bg-semiblack: #00000067;
+}
+
 /* Home Page*/
 .c-highlight {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -126,17 +104,20 @@ a {
   align-items: center;
   margin-right: 1rem;
   border: 2px solid var(--secondary);
-  border-radius: 10px;
-  box-shadow: 0.5rem 0.5rem var(--secondary), 0.5rem 0 var(--secondary), 0 0.5rem var(--secondary);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  box-shadow: 0 0.5rem var(--secondary);
 }
 .c-highlight__img {
   border-bottom: 1px solid var(--secondary);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 .c-highlight__text {
+  height: 100%;
+  padding: 1rem;
   text-align: center;
-  margin: 1rem;
+  background: var(--bg-semiblack);
 }
 .c-highlight__title {
   font-size: clamp(3.5rem, 1rem + 5vw, 5rem);
@@ -146,16 +127,107 @@ a {
   font-size: clamp(1.5rem, 0.5rem + 1.5vw, 2rem);
 }
 
-/* Footer */
-.c-footer {
-  font-size: 1.8rem;
-  text-align: center;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
+.c-contact {
+  gap: 1rem;
+  width: 80%;
+  flex-direction: row-reverse;
 }
-.c-footer__link {
+.c-contact__info {
+  font-size: 2rem;
+  padding: 2rem;
+  background: var(--bg-semiblack);
+  border: 1px solid var(--secondary);
+}
+.c-contact__location, .c-contact__phone, .c-contact__mail {
+  gap: 1rem;
+}
+.c-contact__map {
+  flex: 1;
+}
+.c-contact__map iframe {
+  width: 100%;
+}
+
+@media screen and (max-width: 60.25rem) {
+  .c-contact {
+    width: 80%;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 27.75rem) {
+  .c-contact {
+    width: 70%;
+  }
+}
+.c-icon {
+  color: var(--primary);
+}
+
+.c-products {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+:root {
+  --white: #fff;
+  --bg-grey: #1a1b20;
+  --secondary: #ffc743;
+  --primary: #e71d36;
+  --primary-shadow: #570505;
+  --bg-semiblack: #00000067;
+}
+
+/* Layout class styles */
+.l-flex {
+  display: flex;
+}
+
+.l-grid {
+  display: grid;
+}
+
+.l-flex-1 {
+  flex: 1;
+}
+
+.l-ai-center {
+  align-items: center;
+}
+
+.l-jc-sa {
+  justify-content: space-around;
+}
+
+.l-ai-bline {
+  align-items: baseline;
+}
+
+/* Global styles */
+html {
+  font-family: "Chewy", cursive;
+  font-size: 62.5%;
+}
+
+body {
+  color: var(--white);
+  background: var(--bg-grey);
+}
+
+a {
   text-decoration: none;
-  color: var(--secondary);
+  color: var(--white);
+}
+
+.fadeInAnim {
+  animation: fadeIn 200ms ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
