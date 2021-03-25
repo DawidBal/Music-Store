@@ -1,3 +1,53 @@
-.c-products {
+.c-store {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 80%;
+  margin: 0 2rem;
+}
+
+.c-product {
+  grid-template-rows: auto 1fr;
+  padding: 2rem;
+  gap: 1rem;
+  font-size: 2rem;
+  background: var(--white);
+  border: 2px solid var(--secondary);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  box-shadow: 0 0.5rem var(--secondary);
+
+  &__image {
+    width: 30rem;
+    height: 20rem;
+    margin: 0 auto;
+    object-fit: cover;
+    background: var(--white);
+  }
+  &__info {
+    align-items: flex-end;
+    color: var(--black);
+    text-align: center;
+  }
+  &__title {
+    font-size: 3rem;
+  }
+  &__price {
+    color: var(--primary);
+    font-weight: 600;
+  }
+  &__availability--available::before {
+    margin-right: 0.5rem;
+    font-family: 'Font Awesome 5 Free';
+    content: '\f00c';
+    font-weight: 900;
+    color: var(--green);
+  }
+
+  &__availability--unavailable::before {
+    margin-right: 0.5rem;
+    font-family: 'Font Awesome 5 Free';
+    content: '\f00d';
+    font-weight: 900;
+    color: var(--primary);
+  }
 }
