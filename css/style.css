@@ -23,12 +23,33 @@
   border: none;
   color: var(--white);
   cursor: pointer;
+  position: relative;
+}
+.c-menu__item::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.3rem;
+  left: 0;
+  bottom: -0.5rem;
+  transition: opacity 200ms ease-in-out, transform 300ms ease-in-out;
+  background: var(--secondary);
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.c-menu__item:hover::after {
+  opacity: 1;
+  transform: translateY(0px);
 }
 .c-menu__item:focus {
   outline: none;
 }
 .c-menu__item--active {
   transition: color 200ms ease-in-out;
+  color: var(--secondary);
+  position: relative;
+}
+.c-menu__item--active:hover {
   color: var(--secondary);
 }
 
@@ -62,10 +83,10 @@
 }
 
 .c-phrase {
-  font-size: clamp(3.5rem, 1rem + 5vw, 6rem);
+  font-size: clamp(3rem, 1rem + 5vw, 5rem);
 }
 .c-phrase--big {
-  font-size: clamp(7rem, 5rem + 5vw, 11rem);
+  font-size: clamp(6rem, 4rem + 5vw, 9rem);
 }
 .c-phrase--red {
   font-style: italic;
